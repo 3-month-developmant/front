@@ -3,22 +3,25 @@
     <head>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <meta charset="utf-8">
-        <title>Page Title</title>
+        <title>Claimer</title>
         <!--meta name='viewport' content='width=device-width, initial-scale=1'-->
         <link rel="stylesheet" type="text/css" media="screen" href="main.css">
         <!--script src='main.js'></script-->
     </head>
     <body>
-        <top> 
+        <header>
             <h1>Claimer</h1>
-        </top>
-        <content>
+        </header> 
+        <fieldset>
             <from name="Login" method="post">
                 <table>
-                    <input type="number" name="uid"/><br>
-                    <input type="password" name="password"/>
+                    <h2>ClaimerにLogin</h2><br>
+                    <input type="number" name="uid" autocomplete="on" placeholder="idを入力"/><br>
+                    <input type="password" name="password" autocomplete="off" placeholder="passwordを入力"/><br><br>
+
+                    <button type="submit">Login</button>
                 </table>
             </from>
-        </content>
+        </fieldset>
     </body>
 </html>
