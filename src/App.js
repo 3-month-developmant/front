@@ -8,7 +8,6 @@ import SignUp from './component/SignUp';
 const App=()=>{
     return (
         <BrowserRouter>
-            <div>{document.title}</div>
             <Switch>
                 <Route exact path='/'><Home /></Route>
                 <Route path='/signin'><SignIn /></Route>
