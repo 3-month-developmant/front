@@ -29,6 +29,7 @@ const Home=()=>{
             </Box>
             <Divider />
             <Link href='/Signin'>ClaimerにSignin</Link>
+            <Link href='/DelAccount'>アカウントを削除する</Link>
         </Container>
     );
 }
