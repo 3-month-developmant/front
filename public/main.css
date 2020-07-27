@@ -18,8 +18,8 @@ body{
     #head{
         position:relative;
         width:100%;
-        height:45px;
-        
+        height:50px;
+        background: #187FC4;
         border: 1px solid hsl(0, 20%, 0%);
         box-sizing: border-box;
     }
@@ -30,7 +30,9 @@ body{
     }
 
     span.sysname{
-        font-size:30px;
+        color: #FFFFFF;
+        font-family: serif;
+        font-size:38px;
     }
 }
 @media(max-width:480px){
@@ -38,18 +40,18 @@ body{
         position:relative;
         width:100%;
         height:40px;
-        
+        background:#187FC4;
         border: 1px solid hsl(0, 20%, 0%);
         box-sizing: border-box;
     }
     .header{
-        left:30%;
         position: absolute;
         margin-bottom: auto;
         margin-top:auto;
     }
     span.sysname{
-        position:absolute;
+        color: #FFFFFF;
+        font-family: serif;
         font-size:30px;
         
     }
