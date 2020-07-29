@@ -23,7 +23,7 @@ const Home=()=>{
             </Grid>
             <Divider />
             <Box component="span" m={1}>
-                <Button color="secondary" variant="contained">
+                <Button color="secondary" variant="contained" href="/Signin">
                     こんにちは
                 </Button>
             </Box>
