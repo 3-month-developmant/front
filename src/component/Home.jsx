@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 const Home=()=>{
+    
     return(    
         <Container>
             <Typography component="h1" variant="h5">
@@ -19,17 +20,13 @@ const Home=()=>{
                 justify="center"
                 alignItems="center"
             >
-                aaaa
+                ajflaj
             </Grid>
             <Divider />
             <Box component="span" m={1}>
-                <Button color="secondary" variant="contained" href="/Signin">
-                    こんにちは
-                </Button>
             </Box>
             <Divider />
             <Link href='/Signin'>ClaimerにSignin</Link>
-            <Link href='/DelAccount'>アカウントを削除する</Link>
         </Container>
     );
 }

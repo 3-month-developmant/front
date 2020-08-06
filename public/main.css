@@ -14,9 +14,7 @@ body{
     justify-content: center;
 }
 @media(min-width:481px){
-
     #head{
-
         position:relative;
         width:100%;
         height:50px;
@@ -32,9 +30,14 @@ body{
     }
 
     span.sysname{
-        color: #FFFFFF;
+        color: #CCFFFF;
         font-family: serif;
         font-size:38px;
+    }
+
+    span.menu_button{
+        color:#CCFFFF;
+        font-size:20px;
     }
 }
 @media(max-width:480px){
@@ -52,9 +55,12 @@ body{
         margin-top:auto;
     }
     span.sysname{
-        color: #FFFFFF;
+        color: #CCFFFF;
         font-family: serif;
         font-size:30px;
-        
+    }
+    span.menu_button{
+        color:#CCFFFF;
+        font-size:20px;
     }
 }
