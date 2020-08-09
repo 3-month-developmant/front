@@ -8,7 +8,8 @@ import ListItem from '@material-ui/core/ListItem'
 import { Container } from '@material-ui/core';
 import Link from '@material-ui/core/Link';
 import { render } from 'react-dom';
-
+import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@material-ui/core/IconButton';
 
 
 const Head=()=>{
@@ -26,6 +27,13 @@ const Head=()=>{
         setAnchorEl(null);
         window.location.href="/DelAccount";
     }
+    const Logout=(e)=>{
+        setAnchorEl(null);
+        window.location.href="/Signin";
+    }
+    const handleClose=(e)=>{
+        setAnchorEl(null);
+    }
     
     return(
             <div>
@@ -34,18 +42,21 @@ const Head=()=>{
                     <span class="sysname">Claimer</span>
                 </div>
                 <div class="menu">
-                <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                    <span class="menu_button">MENU</span>
-                </Button>
+                <IconButton aria-controls="simple-menu" 
+                    aria-haspopup="true" 
+                    onClick={handleClick}
+                >
+                    <MenuIcon/>
+                </IconButton>
                 <Menu
                     id="simple-menu"
                     anchorEl={anchorEl}
                     keepMounted
                     open={Boolean(anchorEl)}
-                    onClose={handleCloseHome,handleCloseDel}
+                    onClose={handleClose}
                 >
                     <MenuItem onClick={handleCloseHome}>Home</MenuItem>
-                    <MenuItem onClick={handleCloseHome}>Logout</MenuItem>
+                    <MenuItem onClick={Logout}>Logout</MenuItem>
                     <MenuItem onClick={handleCloseDel}>DeleteAccount</MenuItem>
                 </Menu>
                 </div>

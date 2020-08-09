@@ -14,8 +14,7 @@ body{
     justify-content: center;
 }
 .post{
-    background-color:cyan;
-    
+    border:#187FC4;
 }
 @media(min-width:481px){
     #head{

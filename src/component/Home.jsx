@@ -7,13 +7,35 @@ import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
+import SendIcon from '@material-ui/icons/Send';
+import { makeStyles } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
+
+const useStyles = makeStyles((theme) => ({
+    button: {
+      margin: theme.spacing(1),
+    },
+}));
+
+const handleClick=(e)=>{
+
+}
 const Home=()=>{
-    
+    const classes = useStyles();
     return(    
         <Container>
-            <Typography component="h1" variant="h5">
-            Claimer Home
-            </Typography>
+            <span class="post">
+                <IconButton
+                    variant="contained"
+                    color="primary"
+                    disableElevation
+                    className={classes.button}
+                    onClick={handleClick}
+                >
+                    <SendIcon/>
+                </IconButton>
+            </span>
+
             <Grid
                 Container
                 direction="row"
@@ -27,9 +49,17 @@ const Home=()=>{
             </Box>
             <Divider />
             <Link href='/Signin'>ClaimerにSignin</Link>
-            <Button>
-                <span class="post">投稿する</span>
-            </Button>
+            <span class="post">
+                <IconButton
+                    variant="contained"
+                    color="primary"
+                    disableElevation
+                    className={classes.button}
+                    onClick={handleClick}
+                >
+                    <SendIcon/>
+                </IconButton>
+            </span>
         </Container>
     );
 }
