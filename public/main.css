@@ -13,6 +13,10 @@ body{
     position: relative;
     justify-content: center;
 }
+.post{
+    background-color:cyan;
+    
+}
 @media(min-width:481px){
     #head{
         position:relative;

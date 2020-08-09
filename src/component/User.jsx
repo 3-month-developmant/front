@@ -7,7 +7,8 @@ import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
-const Home=()=>{
+
+const User=()=>{
     
     return(    
         <Container>
@@ -27,10 +28,8 @@ const Home=()=>{
             </Box>
             <Divider />
             <Link href='/Signin'>ClaimerにSignin</Link>
-            <Button>
-                <span class="post">投稿する</span>
-            </Button>
+            
         </Container>
     );
 }
-export default Home;
+export default User;

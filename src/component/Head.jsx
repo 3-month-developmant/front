@@ -44,8 +44,8 @@ const Head=()=>{
                     open={Boolean(anchorEl)}
                     onClose={handleCloseHome,handleCloseDel}
                 >
-                    <MenuItem onClick={handleCloseHome} href="/"><Link href="/">Home</Link></MenuItem>
-                    <MenuItem onClick={handleCloseHome} href="/">Logout</MenuItem>
+                    <MenuItem onClick={handleCloseHome}>Home</MenuItem>
+                    <MenuItem onClick={handleCloseHome}>Logout</MenuItem>
                     <MenuItem onClick={handleCloseDel}>DeleteAccount</MenuItem>
                 </Menu>
                 </div>
