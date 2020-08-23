@@ -14,7 +14,23 @@ body{
     justify-content: center;
 }
 .post{
-    border:#187FC4;
+    /*border:#187FC4;*/
+    /*display: block;*/
+    
+    /*margin:0 auto;*/
+    /*margin-left:auto;*/
+    /*width:50%;*/
+    margin-top:5%;
+    position:relative;
+}
+.message{
+    color:#AAAAAA;
+    text-align: center;
+
+}
+.postpaper{
+    
+    position: relative;
 }
 @media(min-width:481px){
     #head{

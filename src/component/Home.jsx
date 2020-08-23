@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Typography from '@material-ui/core/Typography';
-import { Container } from '@material-ui/core';
+import { Container, Paper } from '@material-ui/core';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
@@ -14,53 +14,77 @@ import IconButton from '@material-ui/core/IconButton';
 const useStyles = makeStyles((theme) => ({
     button: {
       margin: theme.spacing(1),
-    },
+    },topPostMark:{
+        alignItems:'right'
+    },root: {
+        flexGrow: 1,
+    }
 }));
 
 const handleClick=(e)=>{
 
 }
+const handleClickPost=(e)=>{
+    window.alert("post");
+}
 const Home=()=>{
     const classes = useStyles();
     return(    
-        <Container>
-            <span class="post">
+        <div className={classes.root}>
+            <Grid container spacing={3}>
+                <Grid item xs={3} style={{height:'100%'}}>
+                    <Paper>
+                    <IconButton
+                        variant="contained"
+                        color="primary"
+                        disableElevation
+                        className={classes.button}
+                        onClick={handleClick}
+                    >
+                        <SendIcon/>
+                    </IconButton>
+                    </Paper>
+
+                    
+                </Grid>
+                <Grid item xs={6}>
+                 
+                <Paper onClick={handleClickPost}
+                style={{flexDirection: '',justifyContent:'flex-end',height:50,margin:10}}>
+                    <span class="message">
+                    投稿しよう！    
+                    </span>
+                {/*
                 <IconButton
+                    
                     variant="contained"
                     color="primary"
                     disableElevation
                     className={classes.button}
+                    
                     onClick={handleClick}
                 >
                     <SendIcon/>
-                </IconButton>
-            </span>
+                </IconButton>*/
+                }
+            
+                </Paper>
+                <Paper style={{height:500,margin:10}}>
+                    投稿内容
+                </Paper>
+                </Grid>
+                <Grid item xs={6}>
 
-            <Grid
-                Container
-                direction="row"
-                justify="center"
-                alignItems="center"
-            >
-                
+                </Grid>
             </Grid>
-            <Divider />
-            <Box component="span" m={1}>
-            </Box>
-            <Divider />
+            
             <Link href='/Signin'>ClaimerにSignin</Link>
             <span class="post">
-                <IconButton
-                    variant="contained"
-                    color="primary"
-                    disableElevation
-                    className={classes.button}
-                    onClick={handleClick}
-                >
-                    <SendIcon/>
-                </IconButton>
+
             </span>
-        </Container>
+        </div>
+        
+        
     );
 }
 export default Home;
