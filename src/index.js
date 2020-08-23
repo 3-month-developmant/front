@@ -4,7 +4,7 @@ import App from './App';
 import Head from './component/Head';
 
 const show=()=>{
-    if(window.location.pathname!="/Signin"&&window.location.pathname!='/Signup')
+    if(window.location.pathname!=="/Signin"&&window.location.pathname!=='/Signup')
         ReactDOM.render(
             <Head />,document.querySelector('#head')
         );

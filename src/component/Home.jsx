@@ -25,6 +25,7 @@ const handleClick=(e)=>{
 
 }
 const handleClickPost=(e)=>{
+    
     window.alert("post");
 }
 const Home=()=>{
@@ -69,7 +70,7 @@ const Home=()=>{
                 }
             
                 </Paper>
-                <Paper style={{height:500,margin:10}}>
+                <Paper style={{height:100,margin:10}}>
                     投稿内容
                 </Paper>
                 </Grid>
