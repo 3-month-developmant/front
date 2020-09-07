@@ -9,36 +9,39 @@ import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import 'whatwg-fetch';
 
-let visibilityState='visible'
+//let visibilityState='visible'
 
-const useStyles = makeStyles((theme) => ({
-    button: {
-      margin: theme.spacing(1),
-    },topPostMark:{
-        alignItems:'right'
-    },root: {
-        flexGrow: 1,
-    },submitButton:{
-        position:'absolute',
-        right:0,
-        bottom:0,
-        color:"lightblue",
-        visibility: visibilityState
-    },postPaper:{
-        position:'relative',
-        flexDirection: '',
-        justifyContent:'flex-end',
-        height:100,
-        margin:10,
-        padding:10
-    },postContent:{
-        position:'relative',
-        top:0
-    }
-}));
+
 
 const Home=()=>{
+    const [visibilityState,setVisible]=useState("hidden");
     const [text,setText]=useState("");
+
+    const useStyles = makeStyles((theme) => ({
+        button: {
+          margin: theme.spacing(1),
+        },topPostMark:{
+            alignItems:'right'
+        },root: {
+            flexGrow: 1,
+        },submitButton:{
+            position:'absolute',
+            right:0,
+            bottom:0,
+            color:"lightblue",
+            visibility: visibilityState
+        },postPaper:{
+            position:'relative',
+            flexDirection: '',
+            justifyContent:'flex-end',
+            height:100,
+            margin:10,
+            padding:10
+        },postContent:{
+            position:'relative',
+            top:0
+        }
+    }));
     const handleClickPost=(e)=>{
         if(text===""){
             window.alert("不正");
@@ -48,11 +51,13 @@ const Home=()=>{
                 headers:{
                     'Content-Type':'application/json'
                 },
-                body:JSON.stringfy({
+                body:JSON.stringify({
                     text:text
                 })
+            }).then(res=>{
+                window.alert(res.url,res.status,res.text);
             })
-            window.alert(text);
+            
         }
 
     }
@@ -96,7 +101,12 @@ const Home=()=>{
                         className={classes.postContent}
                         onChange={
                             (e)=>{
-                                setText(e.target.value)//TextFieldの値を取得
+                                if(e.target.value!==""){//入力フォームに入力があれば
+                                    setVisible("visible")//ボタンをvisible
+                                    setText(e.target.value)//TextFieldの値を取得
+                                }else{
+                                    setVisible("hidden")//ボタンをhidden
+                                }
                             }
                         }
                     />
