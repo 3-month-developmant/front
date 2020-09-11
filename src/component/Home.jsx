@@ -8,10 +8,7 @@ import SendIcon from '@material-ui/icons/Send';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import 'whatwg-fetch';
-
-//let visibilityState='visible'
-
-
+import TimeLine from './TimeLine';
 
 const Home=()=>{
     const [visibilityState,setVisible]=useState("hidden");
@@ -40,41 +37,44 @@ const Home=()=>{
         },postContent:{
             position:'relative',
             top:0
+        },menuPaper:{
+            padding:10,
+            height:500,
+            margin:10
+        },submitPaper:{
+            padding:10,
+            margin:10
         }
+
     }));
     const handleClickPost=(e)=>{
         if(text===""){
             window.alert("不正");
         }else{
-            fetch('',{
+            const data={text:text};
+            fetch('http://localhost:8080/',{
                 method:'POST',
                 headers:{
-                    'Content-Type':'application/json'
+                    'Content-Type':'application/json',
                 },
-                body:JSON.stringify({
-                    text:text
-                })
-            }).then(res=>{
-                window.alert(res.url,res.status,res.text);
-            })
-            
-        }
+                body:JSON.stringify(data),
+                mode:'cors'
 
+            }).then(res=>{
+                res.json();
+            })
+        }
     }
     const handleClick=(e)=>{
         
-
     }
-    
-
     const classes = useStyles();
     
     return(   
-        
         <div className={classes.root}>
             <Grid container spacing={0}>
                 <Grid item xs={0} sm={3} style={{height:'100%'}}>
-                    <Paper>
+                    <Paper className={classes.submitPaper}>
                         <IconButton
                             variant="contained"
                             color="primary"
@@ -84,48 +84,54 @@ const Home=()=>{
                             <SendIcon/>
                         </IconButton>
                     </Paper>
+                    <Paper className={classes.menuPaper}>
+                        MENU
+                    </Paper>
                 </Grid>
                 <Grid item xs={12} sm={9} md={6}>
                 
-                <Paper
-                    elevation={3}
-                    className={classes.postPaper}
-                >
-                    <TextField
+                    <Paper
+                        elevation={3}
+                        className={classes.postPaper}
+                    >
+                        <TextField
 
-                        id="post_text"
-                        placeholder="投稿しよう！"
-                        fullWidth
-                        rows={3}
-                        multiline
-                        className={classes.postContent}
-                        onChange={
-                            (e)=>{
-                                if(e.target.value!==""){//入力フォームに入力があれば
-                                    setVisible("visible")//ボタンをvisible
-                                    setText(e.target.value)//TextFieldの値を取得
-                                }else{
-                                    setVisible("hidden")//ボタンをhidden
+                            id="post_text"
+                            placeholder="投稿しよう！"
+                            fullWidth
+                            rows={3}
+                            multiline
+                            className={classes.postContent}
+                            onChange={
+                                (e)=>{
+                                    if(e.target.value!==""){//入力フォームに入力があれば
+                                        setVisible("visible")//ボタンをvisible
+                                        setText(e.target.value)//TextFieldの値を取得
+                                    }else{
+                                        setVisible("hidden")//ボタンをhidden
+                                    }
                                 }
                             }
-                        }
-                    />
+                        />
                     
-                    <IconButton
-                        variant="contained"
-                        color="primary"
-                        disableElevation
-                        className={classes.submitButton}
-                        onClick={handleClickPost}
-                        type="submit"
-                    >
-                        <SendIcon/>
-                    </IconButton>
+                        <IconButton
+                            variant="contained"
+                            color="primary"
+                            disableElevation
+                            className={classes.submitButton}
+                            onClick={handleClickPost}
+                            type="submit"
+                        >
+                            <SendIcon/>
+                        </IconButton>
 
-                </Paper>
+                    </Paper>
+                    <TimeLine 
+                        className={classes.postPaper}
+                    />
                 </Grid>
-                <Grid item xs={12} sm={6}>
-
+                <Grid item xs={12} sm={9}>
+                    
                 </Grid>
             </Grid>
             
@@ -134,8 +140,6 @@ const Home=()=>{
 
             </span>
         </div>
-        
-        
     );
 }
 export default Home;
