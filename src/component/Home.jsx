@@ -44,6 +44,8 @@ const Home=()=>{
         },submitPaper:{
             padding:10,
             margin:10
+        },timeLine:{
+            padding:40
         }
 
     }));
@@ -126,13 +128,13 @@ const Home=()=>{
                         </IconButton>
 
                     </Paper>
-                    <TimeLine 
-                        className={classes.postPaper}
+                    <TimeLine
+                        className={classes.timeLine}
                     />
                 </Grid>
-                <Grid item xs={12} sm={9}>
-                    
-                </Grid>
+
+
+                
             </Grid>
             
             <Link href='/Signin'>ClaimerにSignin</Link>
