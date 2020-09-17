@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Avatar, CardContent, Container, IconButton, makeStyles, Paper, TextField } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
@@ -10,23 +10,35 @@ import Favorite from '@material-ui/icons/Favorite';
 
 const TimeLine=()=>{
     const sample=require('./sample_data.json');
+
     const useStyles=makeStyles((theme)=>({
         postPaper:{
             position:'relative',
             flexDirection: '',
             justifyContent:'flex-end',
-            
             margin:10,
             padding:10,
             flexGrow:1
         },avater:{
             backgroundColor: red[500],
+        },favoButton:{
+            color:'red'
         }
     }));
     const classes=useStyles();
     let time_line=[];
+    let favorite_color=[];
+    //const [favoriteState,setFavorite]=useState("");
     //time_line.push(<Grid>);
     for(let i=0;i<sample.length;++i){//タイムラインを結合する
+        const handleClick=(e)=>{
+            //window.alert(i);            /** ここにリアクションボタンの動作処理を記述 */
+            if(favorite_color[i]===""){//favoriteを付ける
+                favorite_color[i]="secondary";
+            }else{//favoriteを外す
+                favorite_color[i]="";
+            }
+        }
         time_line.push(
         <Card
             elevation={1}
@@ -44,8 +56,7 @@ const TimeLine=()=>{
                 title={sample[i].name}
                 subheader={sample[i].date}
             />
-            <CardContent
->
+            <CardContent>
 
                 <br/>
                 {sample[i].text}
@@ -53,7 +64,11 @@ const TimeLine=()=>{
                 
             </CardContent>
             <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
+                <IconButton 
+                    className={classes.favoButton}
+                    onClick={handleClick}
+                    aria-label="add to favorites"
+                >
                     <Favorite />
                 </IconButton>
             </CardActions>
