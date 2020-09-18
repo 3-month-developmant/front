@@ -131,10 +131,13 @@ const Home=()=>{
                 </Grid>
             </Grid>
             
-            <Link href='/Signin'>ClaimerにSignin</Link>
-            <span class="post">
-            </span>
+
         </div>
     );
 }
 export default Home;
+/*
+<Link href='/Signin'>ClaimerにSignin</Link>
+<span class="post">
+</span>
+*/
