@@ -19,6 +19,10 @@ const User=()=>{
             padding:10,
             height:500,
             margin:10
+        },profile:{
+            height:400,
+            padding:10,
+            margin:10
         }
     }));
     const handleClick=(e)=>{
@@ -28,7 +32,7 @@ const User=()=>{
     return(    
         <div>
             <Grid container spacing={0}>
-                <Grid item xs={0} sm={3} style={{height:'100%'}}>
+                <Grid item xs={0} sm={2} style={{height:'100%'}}>
                     <Paper className={classes.submitPaper}>
                         <IconButton
                             variant="contained"
@@ -43,7 +47,11 @@ const User=()=>{
                         MENU
                     </Paper>
                 </Grid>
-                UserPage
+                <Grid item xs={12} sm={10}>
+                    <Paper className={classes.profile}>
+                        UserPage
+                    </Paper>
+                </Grid>
             </Grid>
         </div>
     );

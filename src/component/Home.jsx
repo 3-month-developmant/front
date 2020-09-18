@@ -72,7 +72,7 @@ const Home=()=>{
     return(   
         <div className={classes.root}>
             <Grid container spacing={0}>
-                <Grid item xs={0} sm={3} style={{height:'100%'}}>
+                <Grid item xs={0} sm={2} style={{height:'100%'}}>
                     <Paper className={classes.submitPaper}>
                         <IconButton
                             variant="contained"
@@ -87,7 +87,7 @@ const Home=()=>{
                         MENU
                     </Paper>
                 </Grid>
-                <Grid item xs={12} sm={9} md={6}>
+                <Grid item xs={12} sm={10} md={6}>
                 
                     <Paper
                         elevation={3}
