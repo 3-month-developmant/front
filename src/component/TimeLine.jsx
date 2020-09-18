@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import Grid from '@material-ui/core/Grid';
-import { Avatar, CardContent, Container, IconButton, makeStyles, Paper, TextField } from '@material-ui/core';
+import { Avatar, CardContent,IconButton, makeStyles} from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import { red } from '@material-ui/core/colors';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -21,24 +21,24 @@ const TimeLine=()=>{
             flexGrow:1
         },avater:{
             backgroundColor: red[500],
-        },favoButton:{
-            color:'red'
         }
     }));
     const classes=useStyles();
     let time_line=[];
-    let favorite_color=[];
-    //const [favoriteState,setFavorite]=useState("");
+    
+    //const [favoriteState,setFavorite]=useState([]);
+    /*const newFavoriteState = (favocolor) =>{
+        setFavorite(favocolor);
+    }*/
     //time_line.push(<Grid>);
     for(let i=0;i<sample.length;++i){//タイムラインを結合する
         const handleClick=(e)=>{
             //window.alert(i);            /** ここにリアクションボタンの動作処理を記述 */
-            if(favorite_color[i]===""){//favoriteを付ける
-                favorite_color[i]="secondary";
-            }else{//favoriteを外す
-                favorite_color[i]="";
-            }
+            /*if(favoriteState[i]===""){
+                newFavoriteState("secondary")
+            }*/
         }
+        //newFavoriteState("");
         time_line.push(
         <Card
             elevation={1}
@@ -57,15 +57,13 @@ const TimeLine=()=>{
                 subheader={sample[i].date}
             />
             <CardContent>
-
                 <br/>
                 {sample[i].text}
                 <br/>
-                
             </CardContent>
             <CardActions disableSpacing>
                 <IconButton 
-                    className={classes.favoButton}
+                    color="primary"
                     onClick={handleClick}
                     aria-label="add to favorites"
                 >

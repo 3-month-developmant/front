@@ -1,8 +1,6 @@
 import React,{useState} from 'react';
-import Typography from '@material-ui/core/Typography';
-import { Container, Paper, TextField } from '@material-ui/core';
+import { Paper, TextField } from '@material-ui/core';
 import Link from '@material-ui/core/Link';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import SendIcon from '@material-ui/icons/Send';
 import { makeStyles } from '@material-ui/core/styles';
@@ -131,14 +129,10 @@ const Home=()=>{
                         className={classes.timeLine}
                     />
                 </Grid>
-
-
-                
             </Grid>
             
             <Link href='/Signin'>ClaimerにSignin</Link>
             <span class="post">
-
             </span>
         </div>
     );
