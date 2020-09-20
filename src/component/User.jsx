@@ -60,8 +60,7 @@ const User=()=>{
                         <b>須野原爽太</b>
                         <p>あいうえおかきくけこさしすせそ</p>
                     </Card>
-                    <TimeLine>
-                    </TimeLine>
+                    <TimeLine />
                 </Grid>
             </Grid>
         </div>
