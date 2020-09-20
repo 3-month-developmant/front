@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-undef */
 import React,{useState} from 'react';
 import { Paper, TextField } from '@material-ui/core';
 import Link from '@material-ui/core/Link';
@@ -7,10 +8,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import 'whatwg-fetch';
 import TimeLine from './TimeLine';
-
+import Dialog from '@material-ui/core/Dialog';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import DialogActions from '@material-ui/core/DialogActions';
 const Home=()=>{
     const [visibilityState,setVisible]=useState("hidden");
     const [text,setText]=useState("");
+    //投稿ボタン用
+    const [open,setOpen]=React.useState(false);
 
     const useStyles = makeStyles((theme) => ({
         button: {
@@ -64,24 +69,39 @@ const Home=()=>{
             })
         }
     }
-    const handleClick=(e)=>{
-        
+    const handleClose=()=>{
+        setOpen(false);
+    }
+    const handleClickOpen=(e)=>{
+        setOpen(true);
     }
     const classes = useStyles();
     
     return(   
         <div className={classes.root}>
             <Grid container spacing={0}>
-                <Grid item xs={0} sm={2} style={{height:'100%'}}>
+                <Grid item xs={2} sm={2} style={{height:'100%'}}>
                     <Paper className={classes.submitPaper}>
                         <IconButton
                             variant="contained"
                             color="primary"
                             disableElevation
                             className={classes.button}
-                            onClick={handleClick}>
+                            onClick={handleClickOpen}>
                             <SendIcon/>
                         </IconButton>
+                        <Dialog open={open} onclose={handleClose} aria-labelledby="form-dialog-title">
+                            <DialogTitle id="form-dialog-title">投稿を作成する</DialogTitle>
+                            <TextField
+                                rows={3}
+                                multiline
+                            />
+                            <DialogActions>
+                                <IconButton onClick={handleClose}>
+                                    <SendIcon/>
+                                </IconButton>
+                            </DialogActions>
+                        </Dialog>
                     </Paper>
                     <Paper className={classes.menuPaper}>
                         MENU
@@ -94,7 +114,6 @@ const Home=()=>{
                         className={classes.postPaper}
                     >
                         <TextField
-
                             id="post_text"
                             placeholder="投稿しよう！"
                             fullWidth
@@ -130,8 +149,6 @@ const Home=()=>{
                     />
                 </Grid>
             </Grid>
-            
-
         </div>
     );
 }

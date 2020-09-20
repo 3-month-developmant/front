@@ -10,7 +10,6 @@ import Favorite from '@material-ui/icons/Favorite';
 
 const TimeLine=()=>{
     const sample=require('./sample_data.json');
-
     const useStyles=makeStyles((theme)=>({
         postPaper:{
             position:'relative',

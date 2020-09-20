@@ -1,13 +1,13 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import { Paper, makeStyles } from '@material-ui/core';
+import { Paper, makeStyles, CardMedia } from '@material-ui/core';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 import SendIcon from '@material-ui/icons/Send';
 import IconButton from '@material-ui/core/IconButton';
-
+import Card from '@material-ui/core/Card';
 const User=()=>{
     const useStyles=makeStyles((theme)=>({
         button: {
@@ -23,6 +23,8 @@ const User=()=>{
             height:400,
             padding:10,
             margin:10
+        },profilePicture:{
+            height:300
         }
     }));
     const handleClick=(e)=>{
@@ -32,7 +34,7 @@ const User=()=>{
     return(    
         <div>
             <Grid container spacing={0}>
-                <Grid item xs={0} sm={2} style={{height:'100%'}}>
+                <Grid item xs={2} sm={2} style={{height:'100%'}}>
                     <Paper className={classes.submitPaper}>
                         <IconButton
                             variant="contained"
@@ -48,9 +50,18 @@ const User=()=>{
                     </Paper>
                 </Grid>
                 <Grid item xs={12} sm={10}>
-                    <Paper className={classes.profile}>
-                        UserPage
-                    </Paper>
+                    <Card className={classes.profile}>
+                        <CardMedia
+                            className={classes.profilePicture}
+                            image="https://wired.jp/app/uploads/2018/01/GettyImages-522585140_w980.webp"
+                        >
+                            
+                        </CardMedia>
+                            
+                    </Card>
+
+                        
+                    
                 </Grid>
             </Grid>
         </div>
