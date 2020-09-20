@@ -90,10 +90,12 @@ const Home=()=>{
                             onClick={handleClickOpen}>
                             <SendIcon/>
                         </IconButton>
-                        <Dialog open={open} onclose={handleClose} aria-labelledby="form-dialog-title">
+                        <Dialog open={open} onclose={handleClose} aria-labelledby="form-dialog-title" margin={3}>
                             <DialogTitle id="form-dialog-title">投稿を作成する</DialogTitle>
                             <TextField
                                 rows={3}
+                                padding={3}
+                                className={classes.postContent}
                                 multiline
                             />
                             <DialogActions>
@@ -142,7 +144,6 @@ const Home=()=>{
                         >
                             <SendIcon/>
                         </IconButton>
-
                     </Paper>
                     <TimeLine
                         className={classes.timeLine}

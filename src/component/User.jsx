@@ -53,11 +53,12 @@ const User=()=>{
                     <Card className={classes.profile}>
                         <CardMedia
                             className={classes.profilePicture}
-                            image="https://wired.jp/app/uploads/2018/01/GettyImages-522585140_w980.webp"
+                            image="P_20191030_200932.jpg"
                         >
                             
                         </CardMedia>
-                            
+                        <p>須野原爽太</p>
+                        <a>あいうえおかきくけこさしすせそ</a>
                     </Card>
 
                         

@@ -29,37 +29,34 @@ const Head=()=>{
     }
     
     return(
-            <div>
-                <div class="headerparent">
-                <div class="header">
-                    <span class="sysname">Claimer</span>
-                </div>
-                <div class="menu">
-                <IconButton aria-controls="simple-menu" 
-                    aria-haspopup="true" 
-                    onClick={handleClick}
-                >
-                    <MenuIcon/>
-                </IconButton>
-                <Menu
-                    id="simple-menu"
-                    anchorEl={anchorEl}
-                    keepMounted
-                    open={Boolean(anchorEl)}
-                    onClose={handleClose}
-                >
-                    <MenuItem onClick={handleCloseHome}>Home</MenuItem>
-                    <MenuItem onClick={Logout}>Logout</MenuItem>
-                    <MenuItem onClick={handleCloseDel}>DeleteAccount</MenuItem>
-                </Menu>
-                </div>
-                </div>
+        <div>
+            <div class="headerparent">
+            <div class="header">
+                <span class="sysname">Claimer</span>
             </div>
+            <div class="menu">
+            <IconButton aria-controls="simple-menu" 
+                aria-haspopup="true" 
+                onClick={handleClick}
+            >
+                <MenuIcon/>
+            </IconButton>
+            <Menu
+                id="simple-menu"
+                anchorEl={anchorEl}
+                keepMounted
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+            >
+                <MenuItem onClick={handleCloseHome}>Home</MenuItem>
+                <MenuItem onClick={Logout}>Logout</MenuItem>
+                <MenuItem onClick={handleCloseDel}>DeleteAccount</MenuItem>
+            </Menu>
+            </div>
+            </div>
+        </div>
             
-        );
-    
-     
-    
+    );
 }
 
 
