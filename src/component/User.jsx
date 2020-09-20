@@ -8,6 +8,7 @@ import Divider from '@material-ui/core/Divider';
 import SendIcon from '@material-ui/icons/Send';
 import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
+import TimeLine from './TimeLine';
 const User=()=>{
     const useStyles=makeStyles((theme)=>({
         button: {
@@ -49,20 +50,18 @@ const User=()=>{
                         MENU
                     </Paper>
                 </Grid>
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={10} md={6}>
                     <Card className={classes.profile}>
                         <CardMedia
                             className={classes.profilePicture}
                             image="P_20191030_200932.jpg"
-                        >
-                            
+                        >  
                         </CardMedia>
-                        <p>須野原爽太</p>
-                        <a>あいうえおかきくけこさしすせそ</a>
+                        <b>須野原爽太</b>
+                        <p>あいうえおかきくけこさしすせそ</p>
                     </Card>
-
-                        
-                    
+                    <TimeLine>
+                    </TimeLine>
                 </Grid>
             </Grid>
         </div>
