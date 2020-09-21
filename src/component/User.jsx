@@ -1,10 +1,6 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
 import { Paper, makeStyles, CardMedia } from '@material-ui/core';
-import Link from '@material-ui/core/Link';
-import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import Divider from '@material-ui/core/Divider';
 import SendIcon from '@material-ui/icons/Send';
 import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
@@ -53,6 +49,7 @@ const User=()=>{
                 <Grid item xs={12} sm={10} md={6}>
                     <Card className={classes.profile}>
                         <CardMedia
+                            object-fit
                             className={classes.profilePicture}
                             image="P_20191030_200932.jpg"
                         >  

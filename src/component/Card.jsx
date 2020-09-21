@@ -17,6 +17,7 @@ const CardComponent=(name,date,text)=>{
             padding:10,
             flexGrow:1
         },avater:{
+            color: theme.palette.getContrastText(red[500]),
             backgroundColor: red[500],
         }
     }))
@@ -26,19 +27,17 @@ const CardComponent=(name,date,text)=>{
     const handleClick=()=>{
         setFlag(!flag);
     }
+    const moveUserPage=()=>{
+        window.location.href="/User";
+    }
     return (
         <Card
         elevation={1}
         className={classes.postPaper}>
             {/*ユーザ名とアイコン*/}
             <CardHeader 
-                avater={
-                    <Avatar aria-label="recipe" className={classes.avater}>T</Avatar>
-                }
-                action={
-                    <IconButton>
-                        <MoreVert />
-                    </IconButton>
+                avatar={
+                    <Avatar display='flex'className={classes.avater} onClick={moveUserPage}>T</Avatar>
                 }
                 title={name}
                 subheader={date}
