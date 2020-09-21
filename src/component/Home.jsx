@@ -6,16 +6,12 @@ import SendIcon from '@material-ui/icons/Send';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import 'whatwg-fetch';
-import Dialog from '@material-ui/core/Dialog';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import DialogActions from '@material-ui/core/DialogActions';
+import Menu from './Menu';
 import TimeLine from './TimeLine';
 
 const Home = () => {
   const [visibilityState, setVisible] = useState('hidden');
   const [text, setText] = useState('');
-  // 投稿ボタン用
-  const [open, setOpen] = React.useState(false);
 
   const useStyles = makeStyles((theme) => ({
     button: {
@@ -42,19 +38,6 @@ const Home = () => {
       margin: 10,
       padding: 10,
     },
-    postContent: {
-      position: 'relative',
-      top: 0,
-    },
-    menuPaper: {
-      padding: 10,
-      height: 500,
-      margin: 10,
-    },
-    submitPaper: {
-      padding: 10,
-      margin: 10,
-    },
     timeLine: {
       padding: 40,
     },
@@ -73,46 +56,14 @@ const Home = () => {
       res.json();
     });
   };
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleClickOpen = (e) => {
-    setOpen(true);
-  };
+
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Grid container spacing={0}>
         <Grid item xs={2} sm={2} style={{ height: '100%' }}>
-          <Paper className={classes.submitPaper}>
-            <IconButton
-              variant="contained"
-              color="primary"
-              disableElevation
-              className={classes.button}
-              onClick={handleClickOpen}
-            >
-              <SendIcon />
-            </IconButton>
-            <Dialog open={open} onclose={handleClose} aria-labelledby="form-dialog-title" margin={3}>
-              <DialogTitle id="form-dialog-title">投稿を作成する</DialogTitle>
-              <TextField
-                rows={3}
-                padding={3}
-                className={classes.postContent}
-                multiline
-              />
-              <DialogActions>
-                <IconButton onClick={handleClose}>
-                  <SendIcon />
-                </IconButton>
-              </DialogActions>
-            </Dialog>
-          </Paper>
-          <Paper className={classes.menuPaper}>
-            MENU
-          </Paper>
+          <Menu />
         </Grid>
         <Grid item xs={12} sm={10} md={6}>
 

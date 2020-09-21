@@ -1,10 +1,9 @@
 import React from 'react';
-import { Paper, makeStyles, CardMedia } from '@material-ui/core';
+import { makeStyles, CardMedia, Avatar } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
-import SendIcon from '@material-ui/icons/Send';
-import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
 import TimeLine from './TimeLine';
+import Menu from './Menu';
 
 const User = () => {
   const useStyles = makeStyles((theme) => ({
@@ -37,20 +36,7 @@ const User = () => {
     <div>
       <Grid container spacing={0}>
         <Grid item xs={2} sm={2} style={{ height: '100%' }}>
-          <Paper className={classes.submitPaper}>
-            <IconButton
-              variant="contained"
-              color="primary"
-              disableElevation
-              className={classes.button}
-              onClick={handleClick}
-            >
-              <SendIcon />
-            </IconButton>
-          </Paper>
-          <Paper className={classes.menuPaper}>
-            MENU
-          </Paper>
+          <Menu />
         </Grid>
         <Grid item xs={12} sm={10} md={6}>
           <Card className={classes.profile}>
@@ -59,6 +45,7 @@ const User = () => {
               className={classes.profilePicture}
               image="P_20191030_200932.jpg"
             />
+            <Avatar>S</Avatar>
             <b>須野原爽太</b>
             <p>あいうえおかきくけこさしすせそ</p>
           </Card>
