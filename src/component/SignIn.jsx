@@ -17,9 +17,10 @@ function Copyright() {
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
         Claimer
-      </Link>{' '}
+      </Link>
+      {' '}
       {new Date().getFullYear()}
-      {'.'}
+      .
     </Typography>
   );
 }
@@ -51,8 +52,7 @@ export default function SignIn() {
     <Container component="main" maxWidth="xs">
 
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-        </Avatar>
+        <Avatar className={classes.avatar} />
         <Typography component="h1" variant="h5">
           Claimer に Sign In
         </Typography>
@@ -100,7 +100,7 @@ export default function SignIn() {
             </Grid>
             <Grid item>
               <Link href="/Signup" variant="body2">
-                {"Don't have an account? Sign Up"}
+                Don't have an account? Sign Up
               </Link>
             </Grid>
           </Grid>

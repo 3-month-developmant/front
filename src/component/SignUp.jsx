@@ -7,7 +7,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-//import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+// import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -18,9 +18,10 @@ function Copyright() {
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
         Claimer
-      </Link>{' '}
+      </Link>
+      {' '}
       {new Date().getFullYear()}
-      {'.'}
+      .
     </Typography>
   );
 }
@@ -50,10 +51,9 @@ export default function SignUp() {
 
   return (
     <Container component="main" maxWidth="xs">
-     
+
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-        </Avatar>
+        <Avatar className={classes.avatar} />
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
