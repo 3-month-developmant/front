@@ -20,12 +20,19 @@ const User = () => {
       margin: 10,
     },
     profile: {
+      position: 'relative',
       height: 400,
       padding: 10,
       margin: 10,
     },
     profilePicture: {
       height: 300,
+    },
+    profileAvatar: {
+      position: 'absolute',
+      width: theme.spacing(15),
+      height: theme.spacing(15),
+      top: 188,
     },
   }));
   const handleClick = () => {
@@ -40,12 +47,12 @@ const User = () => {
         </Grid>
         <Grid item xs={12} sm={10} md={6}>
           <Card className={classes.profile}>
+            <Avatar className={classes.profileAvatar} />
             <CardMedia
               object-fit
               className={classes.profilePicture}
               image="P_20191030_200932.jpg"
             />
-            <Avatar>S</Avatar>
             <b>須野原爽太</b>
             <p>あいうえおかきくけこさしすせそ</p>
           </Card>

@@ -54,7 +54,7 @@ export default function SignIn() {
       <div className={classes.paper}>
         <Avatar className={classes.avatar} />
         <Typography component="h1" variant="h5">
-          Claimer に Sign In
+          Sign In
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -94,13 +94,13 @@ export default function SignIn() {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2">
+              <Link href="/" variant="body2">
                 Forgot password?
               </Link>
             </Grid>
             <Grid item>
               <Link href="/Signup" variant="body2">
-                Don't have an account? Sign Up
+                Don&apos;t have an account? Sign Up
               </Link>
             </Grid>
           </Grid>
