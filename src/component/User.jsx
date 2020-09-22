@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles, CardMedia, Avatar } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
+import Button from '@material-ui/core/Button';
 import TimeLine from './TimeLine';
 import Menu from './Menu';
 
@@ -34,6 +35,14 @@ const User = () => {
       height: theme.spacing(15),
       top: 188,
     },
+    editProfileButton: {
+      position: 'absolute',
+      width: 200,
+      height: 20,
+      margin: 10,
+      right: 0,
+      backgroundColor: 'red',
+    },
   }));
   const handleClick = () => {
 
@@ -47,6 +56,7 @@ const User = () => {
         </Grid>
         <Grid item xs={12} sm={10} md={6}>
           <Card className={classes.profile}>
+            <Button className={classes.editProfileButton} onClick={handleClick}>編集する</Button>
             <Avatar className={classes.profileAvatar} />
             <CardMedia
               object-fit

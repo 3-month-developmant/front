@@ -6,6 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogActions from '@material-ui/core/DialogActions';
+import Button from '@material-ui/core/Button';
 
 const Menu = () => {
   // 投稿ボタン用
@@ -17,7 +18,6 @@ const Menu = () => {
   const handleClickOpen = () => {
     setOpen(true);
   };
-
   const useStyles = makeStyles(() => ({
     submitPaper: {
       padding: 10,
@@ -35,6 +35,16 @@ const Menu = () => {
   }));
 
   const classes = useStyles();
+
+  const goTimeLine = () => {
+    window.location.href = '/';
+  };
+  const goProfile = () => {
+    window.location.href = 'User';
+  };
+  const goSignIn = () => {
+    window.location.href = 'SignIn';
+  };
 
   return (
     <div>
@@ -65,6 +75,9 @@ const Menu = () => {
       </Paper>
       <Paper className={classes.menuPaper}>
         MENU
+        <Button onClick={goSignIn}>ログイン</Button>
+        <Button onClick={goProfile}>プロフィール</Button>
+        <Button onClick={goTimeLine}>タイムライン</Button>
       </Paper>
     </div>
   );
