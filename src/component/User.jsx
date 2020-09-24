@@ -5,6 +5,7 @@ import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 import TimeLine from './TimeLine';
 import Menu from './Menu';
+import sample from './sample_user.json';
 
 const User = () => {
   const useStyles = makeStyles((theme) => ({
@@ -43,6 +44,10 @@ const User = () => {
       right: 0,
       backgroundColor: 'red',
     },
+    uid: {
+      fontSize: 12,
+      margin: 0,
+    },
   }));
   const handleClick = () => {
 
@@ -63,8 +68,9 @@ const User = () => {
               className={classes.profilePicture}
               image="P_20191030_200932.jpg"
             />
-            <b>須野原爽太</b>
-            <p>あいうえおかきくけこさしすせそ</p>
+            <b>{sample.userName}</b>
+            <p className={classes.uid}>{sample.uid}</p>
+            <p>{sample.comment}</p>
           </Card>
           <TimeLine />
         </Grid>

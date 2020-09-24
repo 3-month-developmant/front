@@ -6,18 +6,15 @@ import SignUp from './component/SignUp';
 import DeleteAccount from './component/DeleteAccount';
 import User from './component/User';
 
-const App = () => {
-  const uid = '/sotasunohara';
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/"><Home /></Route>
-        <Route path="/signin"><SignIn /></Route>
-        <Route path="/signup"><SignUp /></Route>
-        <Route path="/delaccount"><DeleteAccount /></Route>
-        <Route path={uid}><User /></Route>
-      </Switch>
-    </BrowserRouter>
-  );
-};
+const App = () => (
+  <BrowserRouter>
+    <Switch>
+      <Route exact path="/"><Home /></Route>
+      <Route path="/signin"><SignIn /></Route>
+      <Route path="/signup"><SignUp /></Route>
+      <Route path="/delaccount"><DeleteAccount /></Route>
+      <Route path="/User"><User /></Route>
+    </Switch>
+  </BrowserRouter>
+);
 export default App;
