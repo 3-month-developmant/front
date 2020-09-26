@@ -7,7 +7,7 @@ import TimeLine from './TimeLine';
 import Menu from './Menu';
 import sample from './sample_user.json';
 
-const User = () => {
+const User = (name) => {
   const useStyles = makeStyles((theme) => ({
     button: {
       margin: theme.spacing(1),
@@ -50,8 +50,12 @@ const User = () => {
     },
   }));
   const handleClick = () => {
-
+    window.alert(window.location.pathname);
   };
+  /*
+  if (name === null) {
+    window.alert('loginしてください');
+  } */
   const classes = useStyles();
   return (
     <div>

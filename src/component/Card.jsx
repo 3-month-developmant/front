@@ -8,7 +8,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardActions from '@material-ui/core/CardActions';
 import Favorite from '@material-ui/icons/Favorite';
 
-const CardComponent = (name, date, text) => {
+const CardComponent = (uid, name, date, text) => {
   const useStyles = makeStyles((theme) => ({
     postPaper: {
       position: 'relative',
@@ -30,7 +30,7 @@ const CardComponent = (name, date, text) => {
     setFlag(!flag);
   };
   const moveUserPage = () => {
-    window.location.href = '/User';
+    window.location.href = `/${uid}`;
   };
   return (
     <Card

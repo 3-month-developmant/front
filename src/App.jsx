@@ -13,7 +13,7 @@ const App = () => (
       <Route path="/signin"><SignIn /></Route>
       <Route path="/signup"><SignUp /></Route>
       <Route path="/delaccount"><DeleteAccount /></Route>
-      <Route path="/User"><User /></Route>
+      <Route path="/*"><User /></Route>
     </Switch>
   </BrowserRouter>
 );
